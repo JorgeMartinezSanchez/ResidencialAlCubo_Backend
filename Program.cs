@@ -28,7 +28,7 @@ builder.Services.AddCors(options =>
 
     options.AddPolicy("NetlifyPolicy", policy =>
     {
-        policy.WithOrigins("https://netlify.app") // <-- Tu nueva URL aquí
+        policy.WithOrigins("https://residencialcubo.netlify.app/") // <-- Tu nueva URL aquí
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
