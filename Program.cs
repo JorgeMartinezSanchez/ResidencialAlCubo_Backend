@@ -25,6 +25,13 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod()
             .AllowAnyHeader();
     });
+
+    options.AddPolicy("NetlifyPolicy", policy =>
+    {
+        policy.WithOrigins("https://netlify.app") // <-- Tu nueva URL aquí
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
 });
 
 builder.Services.AddControllers()
