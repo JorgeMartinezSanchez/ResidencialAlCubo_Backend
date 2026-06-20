@@ -37,8 +37,11 @@ builder.Services.AddControllers()
 builder.Services.AddOpenApi();
 
 // PostgreSQL
+var connectionString = Environment.GetEnvironmentVariable("RAILWAY_DB_URL") 
+    ?? builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<RACPostgreSQLDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options.UseNpgsql(connectionString)
            .UseSnakeCaseNamingConvention());
 
 // ── Repositories ───────────────────────────────────────────────────
