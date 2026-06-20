@@ -20,17 +20,11 @@ builder.Services.AddCors(options =>
                 "http://localhost:4200",
                 "http://localhost:4201",
                 "https://localhost:4200",
-                "http://localhost:5173"
+                "http://localhost:5173",
+                "https://residencialcubo.netlify.app"
             )
             .AllowAnyMethod()
             .AllowAnyHeader();
-    });
-
-    options.AddPolicy("NetlifyPolicy", policy =>
-    {
-        policy.WithOrigins("https://residencialcubo.netlify.app")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
     });
 });
 
