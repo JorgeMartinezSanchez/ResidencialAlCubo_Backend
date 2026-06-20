@@ -6,5 +6,12 @@
   },
   "deploy": {
     "startCommand": "dotnet out/rec-be.dll"
+  },
+  "phases": {
+    "setup": {
+      "nixPkgs": [
+        "dotnet-sdk_10"
+      ]
+    }
   }
 }
