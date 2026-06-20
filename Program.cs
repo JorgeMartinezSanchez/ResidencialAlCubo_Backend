@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
                 "http://localhost:4201",
                 "https://localhost:4200",
                 "http://localhost:5173",
-                "https://residencialcubo.netlify.app"
+                "https://residencialalcubofrontend-production.up.railway.app/"
             )
             .AllowAnyMethod()
             .AllowAnyHeader();
