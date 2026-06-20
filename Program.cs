@@ -61,7 +61,7 @@ builder.Services.AddScoped<IGuestService,        GuestService>();
 builder.Services.AddScoped<ILateCheckOutService, LateCheckOutService>();
 
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(int.Parse(port)));
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 var app = builder.Build();
 
