@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aLbYaoD4E2k=",
+  "dgSpecHash": "0O3ZG2VBAOo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\JORGE MARTINEZ S\\Desktop\\UCB\\2026-1\\Taller de Diseño de Software\\Primer Bloque\\Examen parcial 1\\ResidencialAlCubo_WebEdtion\\rec-be\\rec-be.csproj",
+  "projectFilePath": "C:\\Users\\JORGE MARTINEZ S\\Desktop\\UCB\\2026-1\\Taller de Diseño de Software\\Examen final\\ResidencialAlCubo_Backend\\rec-be.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JORGE MARTINEZ S\\.nuget\\packages\\efcore.namingconventions\\10.0.1\\efcore.namingconventions.10.0.1.nupkg.sha512",
     "C:\\Users\\JORGE MARTINEZ S\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
