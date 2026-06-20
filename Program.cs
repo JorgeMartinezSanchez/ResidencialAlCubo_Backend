@@ -16,15 +16,22 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
     {
-        policy.WithOrigins(
-                "http://localhost:4200",
-                "http://localhost:4201",
-                "https://localhost:4200",
-                "http://localhost:5173",
-                "https://residencialalcubofrontend-production.up.railway.app/"
-            )
-            .AllowAnyMethod()
-            .AllowAnyHeader();
+        var allowedOrigins = new List<string>
+        {
+            "http://localhost:4200",
+            "http://localhost:4201",
+            "https://localhost:4200",
+            "http://localhost:5173",
+        };
+
+        // Lee el origen del frontend desde variable de entorno
+        var frontendUrl = Environment.GetEnvironmentVariable("FRONTEND_URL");
+        if (!string.IsNullOrEmpty(frontendUrl))
+            allowedOrigins.Add(frontendUrl);
+
+        policy.WithOrigins(allowedOrigins.ToArray())
+              .AllowAnyMethod()
+              .AllowAnyHeader();
     });
 });
 
@@ -37,7 +44,7 @@ builder.Services.AddControllers()
 builder.Services.AddOpenApi();
 
 // PostgreSQL
-var connectionString = Environment.GetEnvironmentVariable("RAILWAY_DB_URL") 
+var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL") 
     ?? builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<RACPostgreSQLDbContext>(options =>
