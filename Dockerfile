@@ -1,4 +1,4 @@
-FROM ://microsoft.com AS build-env
+﻿FROM ://microsoft.com AS build-env
 WORKDIR /app
 
 COPY *.csproj ./
