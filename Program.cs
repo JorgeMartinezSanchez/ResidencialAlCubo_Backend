@@ -62,6 +62,8 @@ builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
+app.UseRouting();
+
 app.UseCors("AllowAngular");
 
 if (app.Environment.IsDevelopment())
@@ -75,6 +77,8 @@ if (app.Environment.IsDevelopment())
 
 // ── Comentar temporalmente para desarrollo ──────────────────────
 // app.UseHttpsRedirection();
+app.UseAuthorization();
 
 app.MapControllers();
+
 app.Run();
