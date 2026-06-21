@@ -82,14 +82,12 @@ app.UseRouting();
 
 app.UseCors("AllowAngular");
 
-if (app.Environment.IsDevelopment())
+
+app.MapOpenApi();
+app.MapScalarApiReference(options =>
 {
-    app.MapOpenApi();
-    app.MapScalarApiReference(options =>
-    {
-        options.Title = "Residencial Al Cubo Web API";
-    });
-}
+    options.Title = "Residencial Al Cubo Web API";
+});
 
 // ── Comentar temporalmente para desarrollo ──────────────────────
 // app.UseHttpsRedirection();
